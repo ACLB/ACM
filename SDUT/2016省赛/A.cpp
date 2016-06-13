@@ -20,7 +20,7 @@ int main()
 	{
 		cin>>n>>m;
 
-		cout<< (n/m+(n%m?1:0)) <<endl;
+		cout<<(n/m+(n%m?1:0)) <<endl;
 	}
 	return 0;
 }
