@@ -28,6 +28,12 @@ int main()
 
             j++;
         }
+		else if(!ST.empty() && ST.top() == b[j])
+		{
+            S.push_back(make_pair(3,2));
+
+            ST.pop(); j++; i--;
+		}
         else
         {
             ST.push(a[i]);
