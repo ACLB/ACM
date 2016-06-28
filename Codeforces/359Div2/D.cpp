@@ -1,7 +1,7 @@
 /*************************************************************************
   > File Name: D.cpp
   > Author: JueChen
-  > Mail:libiao0730@gmail.com 
+  > Mail:libiao0730@gmail.com
   > Created Time: 2016年06月27日 星期一 16时45分55秒
  ************************************************************************/
 
@@ -19,8 +19,8 @@ int ans[Max];
 
 void dfs1(int u)
 {
-	num[u] = 1; 
-	
+	num[u] = 1;
+
 	Big[u] = 0;
 
 	for(int i = 0 ;i<E[u].size();i++)
@@ -86,7 +86,7 @@ int main()
 
 		E[u].push_back(i);
 	}
-	
+
 	pre[1] = 1;
 
 	dfs1(1);
