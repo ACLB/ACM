@@ -215,33 +215,33 @@
   </equation*>
 
   <\equation*>
-    M<rsub|min > = <frac|kM<rsub|fz> |1-\<xi\>k>
+    M<rsub|m i n > = <frac|kM<rsub|f z> |1-\<xi\>k>
   </equation*>
 
   \;
 
-  <with|color|blue|1.<math|M<rsub|fz>>\<#7684\>\<#8BA1\>\<#7B97\>>
+  <with|color|blue|1.<math|M<rsub|f z>>\<#7684\>\<#8BA1\>\<#7B97\>>
 
   <\equation*>
-    M<rsub|fz> = M<rsub|f z1> +M<rsub|f z23>+M<rsub|f z3>
+    M<rsub|f z> = M<rsub|f z1> +M<rsub|f z23>+M<rsub|f z3>
   </equation*>
 
-  f = ?
+  <math|f> = ?
 
   \;
 
   <\math>
-    M<rsub|fz1> \ \ \ \ \ = <frac|G<rsub|1>f d<rsub|1>|2> \ \ \ \ = ?
+    M<rsub|f z1> \ \ \ \ \ = <frac|G<rsub|1>f d<rsub|1>|2> \ \ \ \ = ?
 
     \;
 
-    M<rsub|fz23> = <frac|G<rsub|2>f d<rsub|23>|2> = ?
+    M<rsub|f z23> = <frac|G<rsub|2>f d<rsub|23>|2> = ?
   </math>
 
   <\math>
     \;
 
-    M<rsub|fz4> =<frac|G<rsub|4>f d<rsub|4>|2> = ?
+    M<rsub|f z4> =<frac|G<rsub|4>f d<rsub|4>|2> = ?
   </math>
 
   \;
@@ -288,7 +288,7 @@
   <math|M<rprime|'> = <frac|M<rsub|min>|\<varphi\><rsub|0>> =
   <frac|\<pi\>M<rsub|min>|\<varphi\><rsub|0>>>
   \ \ \ \ \ \ \ \ <math|M<rsub|max> = M<rsup|<rprime|'>>\<varphi\><rsub|max>
-  \ \ \ \ \ \ = \ <frac|5\<pi\>M<rsup|<rprime|'>>|2> >
+  \ \ \ \ \ \ = \ <frac|5\<pi\>M<rsup|<rprime|'>> |2>= >
 
   \;
 
@@ -296,7 +296,7 @@
 
   \;
 
-  \<#6750\>\<#6599\>\<#FF1A\>\<#9521\>\<#9752\>\<#94DC\>QSn4-3
+  \<#6750\>\<#6599\>\<#FF1A\>\<#9521\>\<#9752\>\<#94DC\> QSn4-3
 
   \;
 
