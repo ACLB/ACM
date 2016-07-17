@@ -3,6 +3,8 @@
 <style|generic>
 
 <\body>
+  \;
+
   <doc-data|<doc-title|\<#7CBE\>\<#5BC6\>\<#673A\>\<#68B0\>\<#8BBE\>\<#8BA1\>\<#8BFE\>\<#7A0B\>\<#8BBE\>\<#8BA1\>>|<doc-author|<author-data|<author-name|\<#56DB\>\<#7EC4\>>>>>
 
   <\with|par-mode|center>
