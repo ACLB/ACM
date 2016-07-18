@@ -22,7 +22,7 @@ struct node
 
     bool operator < (const node &a)const
     {
-        return l == a.l? r>a.r:l<a.l;
+        return l == a.l? r > a.r:l<a.l;
     }
 
 } b[Max];
@@ -60,7 +60,7 @@ int main()
 
         LL ans = 0;
 
-        LL last = b[0].l,be = b[0].r;
+        LL last = b[0].r,be = b[0].l;
 
         for(int i = 1; i<num; i++)
         {
@@ -78,7 +78,8 @@ int main()
 
         if(num)
         {
-             ans += (min(R,last)-max(L,be)+1);
+            if(!(last < L || be > R))
+                ans += (min(R,last)-max(L,be)+1);
         }
 
         printf("%I64d\n",R-L+1-ans);

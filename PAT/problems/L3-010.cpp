@@ -28,9 +28,9 @@ void Insert(No *&p,int ci,int value)
     {
         if(value < p->value)
         {
-            Insert(p->Right,ci*2,value);
+            Insert(p->Right,ci*2+1,value);
         }
-        else Insert(p->Left,ci*2+1,value);
+        else Insert(p->Left,ci*2,value);
     }
 }
 
@@ -84,7 +84,7 @@ int main()
 
     for(int i = 0;i<num;i++)
     {
-        if(i) 
+        if(i)
         {
             printf(" ");
 
@@ -98,7 +98,7 @@ int main()
     }
 
     printf("\n");
-    
+
     if(flag) printf("NO\n");
     else printf("YES\n");
 
