@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1467794832 source:f:\acm\poj\2573\main.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<cstring>
+	<algorithm>
+	<cstdlib>
+	<cmath>
+
