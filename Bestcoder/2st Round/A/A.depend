@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1468759134 source:/home/juechen/ACM/Bestcoder/2st Round/A/main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<algorithm>
+
