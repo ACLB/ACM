@@ -4,55 +4,32 @@
 
 using namespace std;
 
-int arr[50];
+int arr[1100];
 
-void GetBite(int s)
-{
-    arr[0] = 0;
 
-    while(s)
-    {
-        arr[++arr[0]] = s%2;
-
-        s>>=1;
-    }
-}
 int main()
 {
-    int n,m;
-
-    int ans = 0;
-
-    while(~scanf("%d",&n))
+    int n;
+    while(~scanf("%d",&n) && n)
     {
-        ans = 0;
-
-        for(int i = 0;i<n;i++)
+        int ans = 0;
+        for(int i =0;i<n;i++)
         {
-            scanf("%d",&m);
+            scanf("%d",&arr[i]);
 
-            ans ^= m;
-
-            printf("%d\n",ans);
-
-
+            ans ^= arr[i];
         }
-        printf("%d\n",ans);
-
-        GetBite(ans);
 
         int num = 0;
 
-        for(int i = 1;i<arr[0];i++)
+        for(int i = 0;i<n;i++)
         {
-            if(arr[i])
-            {
-                num ^=(1<<(i-1));
-            }
+
+            if(arr[i]>(arr[i]^ans)) num++;
         }
 
+        printf("%d\n",num);
 
-        printf("%d\n",(1<<(arr[0]-1))-num);
     }
     return 0;
 }

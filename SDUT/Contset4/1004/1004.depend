@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1469148899 source:f:\acm\sdut\contset4\1004\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<cmath>
+	<string>
+	<map>
+	<vector>
+	<algorithm>
+

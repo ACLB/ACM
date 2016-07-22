@@ -3,14 +3,15 @@
 #include <cstring>
 #include <cstdlib>
 #include <map>
+#include <cmath>
 #include <algorithm>
 using namespace std;
 
 const int Max = 110000;
 
-int Tr[Max*8];
-
 int arr[Max];
+
+int f[100010][18];
 
 int n;
 
@@ -21,38 +22,25 @@ int GCD(int a,int b)
     return b == 0?a:GCD(b,a%b);
 }
 
-void PushUp(int st)
+void rmq()
 {
-    Tr[st] = GCD(Tr[st<<1],Tr[st<<1|1]);
-}
+    for(int j=1; j<=n; j++) f[j][0]=arr[j];
 
-void Build(int L,int R,int st)
-{
-    if(L == R)
+    for(int i=1; i<18; i++)
     {
-        Tr[st] = arr[L];
-
-        return ;
+        for(int j=1; j<=n; j++)
+        {
+            if(j+(1<<i)-1 <= n)
+            {
+                f[j][i]=GCD(f[j][i-1],f[j+(1<<(i-1))][i-1]);
+            }
+        }
     }
-
-    int mid = (L+R)>>1;
-
-    Build(L,mid,st<<1);
-
-    Build(mid+1,R,st<<1|1);
-
-    PushUp(st);
 }
-
-int Query(int L,int R,int st,int l,int r)
+int look(int l,int r)
 {
-    if(L == l && R == r) return Tr[st];
-
-    int mid = (L+R)>>1;
-
-    if(r<=mid) return Query(L,mid,st<<1,l,r);
-    else if(l>mid) return Query(mid+1,R,st<<1|1,l,r);
-    else return GCD(Query(L,mid,st<<1,l,mid),Query(mid+1,R,st<<1|1,mid+1,r));
+    int k=(int)log2((double)(r-l+1));
+    return GCD(f[l][k],f[r-(1<<k)+1][k]);
 }
 
 void Op(int s)
@@ -63,7 +51,7 @@ void Op(int s)
 
     while(r<=n)
     {
-        g = Query(1,n,1,s,r);
+        g = look(s,r);
 
         int L = r,R = n;
 
@@ -72,7 +60,7 @@ void Op(int s)
 
             int mid = (L+R+1)>>1;
 
-            if(Query(1,n,1,s,mid) == g)
+            if(look(s,mid) == g)
             {
                 L = mid;
             }
@@ -99,13 +87,13 @@ int main()
     {
         scanf("%d",&n);
 
-        for(int i = 1;i<=n;i++) scanf("%d",&arr[i]);
+        for(int i = 1; i<=n; i++) scanf("%d",&arr[i]);
 
-        Build(1,n,1);
+        rmq();
 
         M.clear();
 
-        for(int i = 1;i<=n;i++)
+        for(int i = 1; i<=n; i++)
         {
             Op(i);
         }
@@ -121,7 +109,7 @@ int main()
         {
             scanf("%d %d",&l,&r);
 
-            int g = Query(1,n,1,l,r);
+            int g = look(l,r);
 
             printf("%d %lld\n",g,M[g]);
         }
