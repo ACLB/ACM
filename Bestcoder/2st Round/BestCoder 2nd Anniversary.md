@@ -331,4 +331,146 @@ int main()
     return 0;
 }
 
+<<<<<<< HEAD
+=======
+```
+
+#### HDU【5720】——wool
+
+###### Time Limit: 8000/4000 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)
+
+######Problem Description
+
+At dawn, Venus sets a second task for Psyche.
+She is to cross a river and fetch golden wool from violent sheep who graze on the other side.
+The sheep are wild and tameless, so Psyche keeps on throwing sticks to keep them away. 
+There are n sticks on the ground, the length of the i-th stick is ai.
+If the new stick she throws forms a triangle with any two sticks on the ground, the sheep will be irritated and attack her. 
+Psyche wants to throw a new stick whose length is within the interval [L,R]. Help her calculate the number of valid sticks she can throw next time.
+ 
+###### Input
+The first line of input contains an integer T (1≤T≤10), which denotes the number of test cases.
+
+For each test case, the first line of input contains single integer n,L,R (2≤n≤$10^5$,1≤L≤R≤$10^{18}$).
+
+The second line contains n integers, the i-th integer denotes ai (1≤ai≤$10^{18}$).
+ 
+
+###### Output
+
+For each test case, print the number of ways to throw a stick.
+ 
+##### Sample Input
+2
+2 1 3
+1 1
+4 3 10
+1 1 2 4
+ 
+
+###### Sample Output
+
+2
+5
+
+###### Hint
+
+In the first example, $ 2, 3 $ are available.
+
+In the second example, $ 6, 7, 8, 9, 10 $ are available.
+
+`题解：对于三角新组成的不等式是很清楚的，既a+b>c && abs(a-b)<c,那么我们久可以算出每一个长度和所给线段中的其他长度的线段组成的三角形的可行区间，当我们对所给的线段排序之后，会发现对于区间[a-b,a+b]（a>=b）,当b最接近a的时候区间覆盖最大，我们可以贪心的求出不合法的区间，进而求出在区间[L,R]中的长度`
+
+```cpp
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+
+const int INF = 0x3f3f3f3f;
+
+const int Max = 1e5+100;
+
+typedef long long LL;
+
+LL L,R;
+
+int n;
+
+LL arr[Max];
+
+struct node
+{
+    LL l,r;
+
+    bool operator < (const node &a)const
+    {
+        return l == a.l? r > a.r:l<a.l;
+    }
+
+} b[Max];
+
+int main()
+{
+    int T;
+
+    scanf("%d",&T);
+
+    while(T--)
+    {
+        scanf("%d %I64d %I64d",&n,&L,&R);
+
+        for(int i = 0; i<n; i++)
+        {
+            scanf("%I64d",&arr[i]);
+        }
+
+        sort(arr,arr+n);
+
+        int num = 0;
+
+        for(int i = 0; i<n; i++)
+        {
+            if(i)
+            {
+                b[num].l = arr[i]-arr[i-1]+1;
+
+                b[num++].r = arr[i]+arr[i-1]-1;
+            }
+        }
+
+        sort(b,b+num);
+
+        LL ans = 0;
+
+        LL last = b[0].r,be = b[0].l;
+
+        for(int i = 1; i<num; i++)
+        {
+            if(b[i].l>last)
+            {
+                if(!(last < L || be > R))
+                    ans += (min(R,last)-max(L,be)+1);
+
+                be = b[i].l;
+
+                last = b[i].r;
+            }
+            else  last = max(last,b[i].r);
+        }
+
+        if(num)
+        {
+            if(!(last < L || be > R))
+                ans += (min(R,last)-max(L,be)+1);
+        }
+
+        printf("%I64d\n",R-L+1-ans);
+
+    }
+
+    return 0;
+}
+>>>>>>> 0cb576ae3a1f15ec03ffe131c0c1cc7dd0222900
 ```

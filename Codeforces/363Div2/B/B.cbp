@@ -37,6 +37,10 @@
 			<code_completion />
 			<envvars />
 			<debugger />
+<<<<<<< HEAD
+=======
+			<lib_finder disable_auto="1" />
+>>>>>>> 0cb576ae3a1f15ec03ffe131c0c1cc7dd0222900
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

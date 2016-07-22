@@ -34,10 +34,17 @@
 		</Compiler>
 		<Unit filename="main.cpp" />
 		<Extensions>
+<<<<<<< HEAD
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+=======
 			<envvars />
 			<code_completion />
 			<lib_finder disable_auto="1" />
 			<debugger />
+>>>>>>> 43d54f8bc2d3184ab010b1280854a8a22b2f18f6
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
