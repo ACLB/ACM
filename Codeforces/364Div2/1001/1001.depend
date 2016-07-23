@@ -1,4 +1,8 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1469206115 source:/home/juechen/ACM/Codeforces/364Div2/1001/main.cpp
+=======
+1469246721 source:f:\acm\codeforces\364div2\1001\main.cpp
+>>>>>>> e0a5ae877837cf03b24e96e02237c6251abde0bb
 	<bits/stdc++.h>
 
