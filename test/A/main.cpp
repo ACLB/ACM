@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello world!" << endl;
+    return 0;
+=======
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -125,4 +135,5 @@ int main()
 
     cout<<n - ans<<endl;;
 
+>>>>>>> 43d54f8bc2d3184ab010b1280854a8a22b2f18f6
 }
