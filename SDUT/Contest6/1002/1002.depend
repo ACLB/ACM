@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1469351792 source:f:\acm\sdut\contest6\1002\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<cmath>
+	<queue>
+	<algorithm>
+

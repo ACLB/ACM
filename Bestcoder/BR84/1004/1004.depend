@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1469276051 source:f:\acm\bestcoder\br84\1004\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cmath>
+	<algorithm>
+
