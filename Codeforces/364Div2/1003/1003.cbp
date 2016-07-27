@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="1005" />
+		<Option title="1003" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/1005" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/1003" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/1005" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/1003" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -36,13 +36,8 @@
 		<Extensions>
 			<code_completion />
 			<envvars />
-<<<<<<< HEAD
 			<lib_finder disable_auto="1" />
 			<debugger />
-=======
-			<debugger />
-			<lib_finder disable_auto="1" />
->>>>>>> e0a5ae877837cf03b24e96e02237c6251abde0bb
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

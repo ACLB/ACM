@@ -2,6 +2,10 @@
 
 using namespace std;
 
+<<<<<<< HEAD
+int main()
+{
+=======
 typedef long long LL;
 
 const int Max = 210000;
@@ -79,5 +83,6 @@ int main()
 
     cout<<ans<<endl;
 
+>>>>>>> e0a5ae877837cf03b24e96e02237c6251abde0bb
     return 0;
 }

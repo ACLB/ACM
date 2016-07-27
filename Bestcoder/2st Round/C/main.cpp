@@ -23,10 +23,14 @@ struct node
     bool operator < (const node &a)const
     {
 <<<<<<< HEAD
+        return l == a.l? r > a.r:l<a.l;
+=======
+<<<<<<< HEAD
         return (l == a.l) ? (r < a.r ): (l < a.l);
 =======
         return l == a.l? r > a.r:l<a.l;
 >>>>>>> 0cb576ae3a1f15ec03ffe131c0c1cc7dd0222900
+>>>>>>> 98d3c9725b552eff5eac558e38bd8f88203c20c7
     }
 
 } b[Max];
@@ -95,11 +99,16 @@ int main()
         if(num)
         {
 <<<<<<< HEAD
+            if(!(last < L || be > R))
+                ans += (min(R,last)-max(L,be)+1);
+=======
+<<<<<<< HEAD
              ans += (last-be+1);
 =======
             if(!(last < L || be > R))
                 ans += (min(R,last)-max(L,be)+1);
 >>>>>>> 0cb576ae3a1f15ec03ffe131c0c1cc7dd0222900
+>>>>>>> 98d3c9725b552eff5eac558e38bd8f88203c20c7
         }
 
         printf("%I64d\n",R-L+1-ans);
