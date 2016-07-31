@@ -1,139 +1,79 @@
-<<<<<<< HEAD
-#include <iostream>
-
+#include<stdio.h>
+#include<string.h>
+#include<iostream>
 using namespace std;
-
-int main()
+bool map[6][6];
+int xx[110];//记录路径
+int yy[110];
+bool flag=0;
+int step;//步数
+bool complete()//判断是否都为'-'
 {
-    cout << "Hello world!" << endl;
-    return 0;
-=======
-#include <bits/stdc++.h>
-
-using namespace std;
-
-int a[50],b[50];
-
-long long Pow(int k)
-{
-    long long ans =1;
-
-    for(int i = 1; i<=k; i++) ans*=2;
-
-    return ans-2;
+    int i;
+    for( i = 1 ; i<=4; i++)
+        for( int j = 1 ; j <=4; j++)
+            if(map[i][j]!= 1)
+                return 0;
+    return 1;
 }
-
-void GetBit(long long u,long long v)
+void flip( int x,int y)//翻转  去反
 {
-    a[0] = 0;
-    b[0]= 0 ;
-
-    while(u)
+    int i,j;
+    for( i = 1; i <=4; i++)
     {
-        a[++a[0]] = u%2;
-
-        u>>=1;
+        map[x][i] =!map[x][i];
+        map[i][y]=!map[i][y];
     }
-
-    while(v)
-    {
-        b[++b[0]] = v%2;
-
-        v>>=1;
-    }
-}
-
-int GetBitSize(long long u)
-{
-    int ans = 0;
-
-    while(u)
-    {
-        u>>=1;
-
-        ans++;
-    }
-
-    return ans;
+    map[x][y]=!map[x][y];//因为上面已经重复对map【x】【y】去反了,所以要在重新去反
 
 }
-
-bool Judge(long long u,long long v)
+void dfs(int x,int y,int dep)
 {
-    GetBit(u,v);
-
-    cout<<u<<" "<<v<<endl;
-
-    cout<<a[0]<<" Size "<<b[0]<<endl;
-
-    for(int i =a[0],j = b[0]; i>=1; i--, j--)
+    xx[dep] =x;//记录路径
+    yy[dep] = y;
+    if(dep==step)
     {
-        cout<<a[i]<<" == "<<b[j]<<endl;
-
-        if(a[i] != b[j]) return true;
-    }
-
-    return false;
-
-}
-
-long long cal(int k,long long u)
-{
-
-    int ans = 1;
-
-    for(int i = GetBitSize(u); i <= k; i++) ans *= 2;
-
-    return ans-1;
-}
-int k,n;
-
-vector<long long> table;
-
-int main()
-{
-    cin>>k>>n;
-
-    long long data;
-
-    for(int i = 0;i<n;i++)
-    {
-
-        cin>>data;
-
-        table.push_back(data);
-    }
-
-    long long n = Pow(k);
-
-    long long ans = 0;
-
-    sort(table.begin(),table.end());
-
-    table.erase(unique(table.begin(),table.end()),table.end());
-
-    int m = table.size();
-
-    for(int i = 0; i < m; i++)
-    {
-        bool flag = false;
-
-        for(int j = 0; j < i; j++)
+        flag=complete();
+        if(flag)//如果符合条件
         {
-            if(!Judge(table[j],table[i]))
+            printf("%d\n",step);
+            for(int i =0 ; i<step ; i++)
             {
-
-                flag = true;
-
-                break;
+                printf("%d %d\n",xx[i],yy[i]);
             }
+            return;
         }
-
-        if(!flag) ans+=cal(k,table[i]);
+        return;
 
     }
+    if(y==5)  return;//边界
+    flip(x,y);//翻的情况
+    if(y<4)  dfs(x,y+1,dep+1);//如果下一步 没到下一行就继续，横向走
+    else  dfs(x+1,1,dep+1);//如果下一步是下一行了，就跳到下一行
+    flip(x,y);//不翻的的情况
+    if(y<4)  dfs(x,y+1,dep);
+    else  dfs(x+1,1,dep);
 
-    cout<<n - ans<<endl;;
 
->>>>>>> 43d54f8bc2d3184ab010b1280854a8a22b2f18f6
+}
+int main()
+{
+    int  i,j;
+    char c[5];
+    for( i =1; i<=4; i ++) //建图，如果是‘’——‘就取’1‘，
+    {
+        scanf("%s",c);
+        for( j=1; j<=4; j++)
+        {
+            if(c[i-1]=='-') map[i][j]=1;
+
+            else map[i][j] = 0;
+        }
+    }
+
+    for(step = 0 ; step <=16; step++) //枚举步数
+    {
+        dfs(1,1,1);
+    }
+    return 0;
 }
