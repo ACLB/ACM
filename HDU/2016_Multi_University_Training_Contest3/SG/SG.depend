@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1469583114 source:/home/juechen/ACM/HDU/2016_Multi_University_Training_Contest3/SG/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<cmath>
+	<queue>
+	<map>
+	<set>
+	<stack>
+	<vector>
+	<algorithm>
+
