@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1470483818 source:f:\acm\bestcoder\br86\1002\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	<string>
+	<queue>
+	<stack>
+	<vector>
+	<map>
+	<set>
+	<list>
+	<algorithm>
+
