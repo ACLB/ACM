@@ -53,5 +53,6 @@ int main() {
         }
         printf("\n");
     }
+    cout<<"---"<<endl;
     return 0;
 }
