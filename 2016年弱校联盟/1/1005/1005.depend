@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1475393645 source:/home/juechen/ACM/2016年弱校联盟/1/1005/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<cmath>
+	<queue>
+	<stack>
+	<string>
+	<algorithm>
+
