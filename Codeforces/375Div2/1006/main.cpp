@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 const int maxn = 210000;
 vector<int>E[maxn];
@@ -39,7 +38,6 @@ int main() {
     pre[t] = ++num;
     map<int,int>mp;
     map<int,int>mpp;
-    printf("----\n");
     for(int i = 0; i<E[s].size(); i++) {
         mp[Find(E[u][i])] = 1;
     }
@@ -74,8 +72,5 @@ int main() {
             for(int j = 0; j<Ee[i].size(); j++) printf("%d %d\n",i,E[i][j]);
         }
     } else printf("No\n");
-
-
-
     return 0;
 }

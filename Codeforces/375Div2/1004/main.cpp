@@ -13,17 +13,21 @@ struct node {
 int dir[][2] = {{0,1},{0,-1},{1,0},{-1,0}};
 bool vis[55][55];
 int num;
-int dfs(int x,int y) {
+bool dfs(int x,int y) {
     num++;
+    bool flag = true;
     vis[x][y] = true;
     for(int i = 0;i<4;i++) {
         int Fx = x+dir[i][0];
         int Fy = y+dir[i][1];
-        if(Fx < 0 || Fx >= n|| Fy<0 ||Fy >=m) return false;
+        if(Fx < 0 || Fx >= n|| Fy<0 ||Fy >=m) {
+                flag = false;
+                continue;
+        }
         if(str[Fx][Fy]!='*' && !vis[Fx][Fy])
-            if(!dfs(Fx,Fy)) return false;
+            if(!dfs(Fx,Fy)) flag = false;
     }
-    return true;
+    return flag;
 }
 void dfs1(int x,int y) {
     str[x][y] = '*';
@@ -31,8 +35,8 @@ void dfs1(int x,int y) {
      for(int i = 0;i<4;i++) {
         int Fx = x+dir[i][0];
         int Fy = y+dir[i][1];
-        if(Fx < 0 || Fx >= n|| Fy<0 ||Fy >m) continue;
-        if(str[Fx][Fy]!='*' && !vis[Fx][Fy])  dfs(Fx,Fy);
+        if(Fx < 0 || Fx >= n|| Fy<0 ||Fy >=m) continue;
+        if(str[Fx][Fy]!='*' && !vis[Fx][Fy])  dfs1(Fx,Fy);
     }
 }
 int main() {
@@ -43,8 +47,7 @@ int main() {
     for(int i = 0;i<n;i++) {
         for(int j = 0;j<m;j++) {
             if(str[i][j] == '.' && !vis[i][j]) {
-                num = 0
-                ;
+                num = 0;
                 if(dfs(i,j)) {
                     a[top].k = num;
                     a[top].x = i;
