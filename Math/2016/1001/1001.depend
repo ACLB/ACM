@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1473591888 source:f:\acm\math\2016\1001\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<cstdio>
+	<cmath>
+	<algorithm>
+
