@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1469610258 source:f:\acm\hdu\2016_multi_training_contest3\1004\main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<cstdlib>
+	<cmath>
+	<string>
+	<queue>
+	<stack>
+	<algorithm>
+

@@ -1,4 +1,9 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
+1468933449 source:/home/juechen/ACM/Codeforces/363Div2/E/main.cpp
+	<iostream>
+=======
 1469011456 source:f:\acm\codeforces\363div2\e\main.cpp
 	<bits/stdc++.h>
+>>>>>>> 0cb576ae3a1f15ec03ffe131c0c1cc7dd0222900
 

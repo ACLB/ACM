@@ -1,4 +1,9 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1474160601 source:f:\acm\hdu\2016dalian\1008\main.cpp
 	<iostream>
+=======
+1473567974 source:f:\acm\hdu\2016dalian\1008\main.cpp
+	<bits/stdc++.h>
+>>>>>>> origin/master
 

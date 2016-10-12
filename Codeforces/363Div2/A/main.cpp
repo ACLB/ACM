@@ -2,6 +2,39 @@
 
 using namespace std;
 
+<<<<<<< HEAD
+const int INF = 0x3f3f3f3f;
+
+char s[230000];
+
+int  a[230000];
+
+int main()
+{
+    int n,data;
+
+    scanf("%d",&n);
+
+    scanf("%s",s);
+
+
+    int ans = INF;
+
+    for(int i = 0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+
+        if(!i) continue;
+
+        if(s[i]=='L' && s[i-1] == 'R')
+        {
+            ans  = min(ans,(a[i]-a[i-1])/2);
+        }
+    }
+    if(ans == INF) ans = -1;
+
+    printf("%d\n",ans);
+=======
 char s[1100][1100];
 
 int x[1100],y[1100];
@@ -49,5 +82,6 @@ int main()
         printf("YES\n%d %d\n",X,Y);
     }
     else printf("NO\n");
+>>>>>>> 0cb576ae3a1f15ec03ffe131c0c1cc7dd0222900
     return 0;
 }

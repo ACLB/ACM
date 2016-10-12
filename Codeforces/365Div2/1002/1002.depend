@@ -1,4 +1,8 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1470324992 source:f:\acm\codeforces\365div2\1002\main.cpp
+=======
+1470357404 source:f:\acm\codeforces\365div2\1002\main.cpp
+>>>>>>> origin/master
 	<bits/stdc++.h>
 

@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1474721640 source:/home/juechen/ACM/Bestcoder/BR87Div2/1002/main.cpp
+	<set>
+	<map>
+	<list>
+	<cmath>
+	<ctime>
+	<deque>
+	<queue>
+	<stack>
+	<cctype>
+	<cstdio>
+	<string>
+	<vector>
+	<cassert>
+	<cstdlib>
+	<cstring>
+	<sstream>
+	<iostream>
+	<algorithm>
+

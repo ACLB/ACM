@@ -36,7 +36,17 @@
 		<Extensions>
 			<code_completion />
 			<envvars />
+<<<<<<< HEAD
 			<debugger />
+=======
+<<<<<<< HEAD
+			<lib_finder disable_auto="1" />
+			<debugger />
+=======
+			<debugger />
+			<lib_finder disable_auto="1" />
+>>>>>>> e0a5ae877837cf03b24e96e02237c6251abde0bb
+>>>>>>> origin/master
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

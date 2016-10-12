@@ -36,6 +36,10 @@
 		<Extensions>
 			<code_completion />
 			<envvars />
+<<<<<<< HEAD
+=======
+			<lib_finder disable_auto="1" />
+>>>>>>> origin/master
 			<debugger />
 		</Extensions>
 	</Project>

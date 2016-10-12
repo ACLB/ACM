@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1471397347 source:f:\acm\hdu\2016multi_university_training_8\testcp\main.cpp
+	<iostream>
+	<cmath>
+	<vector>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<queue>
+	<stack>
+	<list>
+	<algorithm>
+	<map>
+	<set>
+

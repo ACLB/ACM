@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1475466325 source:/home/juechen/ACM/线性dp/1002/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<cmath>
+	<queue>
+	<algorithm>
+	<vector>
+

@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello world!" << endl;
+=======
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -86,5 +95,6 @@ int main()
 
     printf("\n");
 
+>>>>>>> 0cb576ae3a1f15ec03ffe131c0c1cc7dd0222900
     return 0;
 }
