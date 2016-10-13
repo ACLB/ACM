@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1469543795 source:/home/juechen/ACM/test/A/main.cpp
-	<stdio.h>
-	<string.h>
-	<iostream>
-
