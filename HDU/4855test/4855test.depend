@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1476967581 source:f:\acm\hdu\4855test\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	<algorithm>
+
