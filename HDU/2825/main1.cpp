@@ -23,13 +23,7 @@ void Insert(int Index) {
 void GetFail() {
     memset(fail,0,sizeof(fail));
     queue<int>Q;
-<<<<<<< HEAD
-    for(int i = 0; i<26; i++ ) 
-        if(tr[0][i]) Q.push(tr[0][i]);
-    
-=======
     for(int i = 0; i<26; i++ ) if(tr[0][i]) Q.push(tr[0][i]);
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
     while(!Q.empty()) {
         int u = Q.front(); Q.pop();
         for(int i = 0; i<26; i++) {
@@ -44,22 +38,13 @@ void GetFail() {
 }
 int cnt(int s) {
     int ans = 0;
-<<<<<<< HEAD
-    for(int i = 0; i<m; i++) 
-        if((s>>i)&1) ans++;
-=======
     for(int i = 0; i<m; i++) if((s>>i)&1) ans++;
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
     return ans;
 }
 int main() {
     while(~scanf("%d %d %d",&n,&m,&k)&&(n||m||k)) {
         memset(tr,0,sizeof(tr));
-<<<<<<< HEAD
         memset(flag,0,sizeof(flag));
-=======
-        memchr(flag,0,sizeof(flag));
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
         top = 0;
         for(int i = 0; i<m; i++) {
             scanf("%s",str);
@@ -72,12 +57,7 @@ int main() {
             for(int j = 0; j<=top; j++) {
                 for(int s = 0; s<(1<<m); s++) {
                     if(dp[i][j][s] ==0 )continue;
-<<<<<<< HEAD
-                    for(int t = 0; t<26; t++) 
-                        (dp[i+1][tr[j][t]][s|flag[tr[j][t]]] +=dp[i][j][s])%=mod;
-=======
                     for(int t = 0; t<26; t++) (dp[i+1][tr[j][t]][s|flag[tr[j][t]]] +=dp[i][j][s])%=mod;
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
                 }
             }
         }

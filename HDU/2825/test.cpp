@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 const int mod = 20090717;
 const int maxn = 120;
@@ -10,7 +9,7 @@ char str[maxn];
 int n,m,k;
 int flag[maxn];
 int dp[26][maxn][1<<10];
-void Insert(int Index) {
+void Insert(int Index){
     int len = strlen(str);
     int x = 0 ;
     for(int i = 0; i<len; i++) {
@@ -22,17 +21,13 @@ void Insert(int Index) {
 }
 void GetFail() {
     memset(fail,0,sizeof(fail));
-    queue<int>Q;
-<<<<<<< HEAD
-    for(int i = 0; i<26; i++ ) 
+    queue<int> Q;
+    for(int i = 0; i<26; i++){
         if(tr[0][i]) Q.push(tr[0][i]);
-    
-=======
-    for(int i = 0; i<26; i++ ) if(tr[0][i]) Q.push(tr[0][i]);
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
-    while(!Q.empty()) {
+    }
+    while(!Q.empty()){
         int u = Q.front(); Q.pop();
-        for(int i = 0; i<26; i++) {
+        for(int i = 0; i<26; i++){
             if(tr[u][i]) {
                 Q.push(tr[u][i]);
                 fail[tr[u][i]] = tr[fail[u]][i];
@@ -42,48 +37,38 @@ void GetFail() {
         }
     }
 }
-int cnt(int s) {
+int cnt(int s){
     int ans = 0;
-<<<<<<< HEAD
-    for(int i = 0; i<m; i++) 
+    for(int i = 0; i<m; i++){
         if((s>>i)&1) ans++;
-=======
-    for(int i = 0; i<m; i++) if((s>>i)&1) ans++;
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
+    }
     return ans;
 }
-int main() {
-    while(~scanf("%d %d %d",&n,&m,&k)&&(n||m||k)) {
+int main(){
+    while(~scanf("%d %d %d",&n,&m,&k) && (n||m||k)){
+        top=0;
         memset(tr,0,sizeof(tr));
-<<<<<<< HEAD
         memset(flag,0,sizeof(flag));
-=======
-        memchr(flag,0,sizeof(flag));
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
-        top = 0;
-        for(int i = 0; i<m; i++) {
+        for(int i=0; i<m; i++ ){
             scanf("%s",str);
             Insert(i);
         }
         GetFail();
         memset(dp,0,sizeof(dp));
         dp[0][0][0] = 1;
-        for(int i = 0; i<n; i++) {
-            for(int j = 0; j<=top; j++) {
-                for(int s = 0; s<(1<<m); s++) {
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<=top; j++){
+                for(int s = 0; s<(1<<m); s++){
                     if(dp[i][j][s] ==0 )continue;
-<<<<<<< HEAD
-                    for(int t = 0; t<26; t++) 
-                        (dp[i+1][tr[j][t]][s|flag[tr[j][t]]] +=dp[i][j][s])%=mod;
-=======
-                    for(int t = 0; t<26; t++) (dp[i+1][tr[j][t]][s|flag[tr[j][t]]] +=dp[i][j][s])%=mod;
->>>>>>> d7b511ef9fc4bf317685ae4a662669e875e25925
+                    for(int t = 0; t<26; t++){
+                        (dp[i+1][tr[j][t]][s|flag[tr[j][t]]]+=dp[i][j][s])%=mod;
+                    }
                 }
             }
         }
         int ans = 0;
-        for(int i = 0; i<=top; i++) {
-            for(int j = 0; j<(1<<m); j++) {
+        for(int i = 0; i<=top; i++){
+            for(int j = 0; j<(1<<m); j++){
                 if(cnt(j)< k) continue;
                 (ans+=dp[n][i][j])%=mod;
             }
