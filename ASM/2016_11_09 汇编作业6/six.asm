@@ -46,20 +46,20 @@ MAIN PROC FAR
 	MOV ES, AX
 	TESTT:
 		OUTPUT TS									;提示输入密码
-		OUTPUT WARP
+		OUTPUT WARP                                 ;输出回车换行
 		INPUT MA									;输入字符串
 		CALL ISEND									;判断输入的字符串是不是结束命令
-		CMP AX ,1
+		CMP AX ,1                                   ;判断程序ISEND执行完之后的返回值
 		JZ FIN										;如果是结束命令则结束程序
 		CALL CHECK									;判断输入的字符是不是合法，即是不是4位和是不是由数字组成
-		CMP AX,0
+		CMP AX,0                                    ;判断程序CHECK执行完之后的返回值
 		JZ TESTT									;如果不合法则继续输入
 		CALL ISTRUE									;判断输入的合法密码是不是正确
-		CMP AX,1
+		CMP AX,1                                    ;判断程序ISTRUE执行玩之后的返回值
 		JZ TESTT									;如果密码不正确则继续输入
 	FIN:											;结束程序
-		OUTPUT ID
-		CALL FINISH
+		OUTPUT ID                                   ;输出提示字符串
+		CALL FINISH                                 ;执行结束程序
 	RET
 MAIN ENDP
 ;Function Name	: FINISH
@@ -67,7 +67,7 @@ MAIN ENDP
 FINISH PROC
 	MOV AH,0
 	INT 16H											;16H是键盘服务，00表示从键盘读字符
-	MOV AH,4CH
+	MOV AH,4CH                                       
 	INT 21H											;带返回码结束程序
 	RET
 FINISH ENDP
@@ -78,8 +78,8 @@ FINISH ENDP
 ISEND PROC
 	LEA SI, MA+2									;输入字符的首地址
 	LEA DI, ED										;定义结束命令的首地址
-	MOV CX, 04H	
-	CLD
+	MOV CX, 04H	                                    ;给CX赋字符串的大小
+	CLD                                             ;清除方向标志位
 	REPE CMPSB										;字符串比较
 	JCXZ ISEXIT										;如果CX = 0 ,说明输入的是结束命令
 	ISNOT:
@@ -124,7 +124,7 @@ CHECK PROC
 		JL EXIT
 		CMP AL,'9'									;输入的字符是不是大余'9'
 		JG EXIT
-		INC SI
+		INC SI                                      ;源变址寄存器增加
 		DEC CX
 		JNZ NEXT									;如果合法，则继续判断下一个字符
 		MOV AX,1
