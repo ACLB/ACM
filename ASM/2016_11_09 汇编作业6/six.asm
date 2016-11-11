@@ -1,6 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;Copyright 	: SDUT
-;Author		: LiBiao
+;Problem	: 四组-第六题
+;Member		：李标，路广晨，时明群，司腾，张树炜，张镇，张永平
 ;Data 		: 2016-10-31
 ;Description: 检查输入的四位密码与设定的密码是否相同，输入EXIT结束程序
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -13,13 +14,15 @@ DATA SEGMENT
 	MA	DB 	100										;用来储存输入的密码
 		DB 	?
 		DB	100 DUP(?)
-	TS	DB 	0DH,0AH,'Please input the password!$'	;提示输入密码
-	WA 	DB 	0DH,0AH,'The string is not legal!','$'	;提示输入的密码不合法
+	TS	DB 	0DH,0AH,'Please input the password! If you want to quit the program,please input "EXIT".$'	
+													;提示输入密码和退出程序的命令
+	WA 	DB 	0DH,0AH,'The password is not legal!','$';提示输入的密码不合法
 	WARP	DB 0DH,0AH,'$'							;回车换行
 	IST	DB 	0DH,0AH,'CORRECT','$'					;密码输入正确
 	ISF	DB 	0DH,0AH,'ERROR','$'						;密码输入错误
 	ID 	DB 	0DH,0AH,'Press any key to finish !$'	;提示按任意键结束程序
 DATA ENDS
+
 ;Function Name 	: STACK SEGMENT
 ;Description	: 定义堆栈段
 STACK SEGMENT STACK
@@ -28,6 +31,7 @@ STACK ENDS
 
 CODE SEGMENT
 	ASSUME DS:DATA,ES:DATA,CS:CODE,SS:STACK
+
 ;Function Name  : OUTPUT 和 INPUT
 ;Description	: 输出字符串和输出字符
 OUTPUT MACRO SR
@@ -41,12 +45,12 @@ INPUT MACRO SR
 	INT 21H
 	ENDM
 MAIN PROC FAR
-	MOV AX, DATA
-	MOV DS, AX
+	MOV AX, DATA									;ASSUME确定段寄存器和逻辑段之间的关系，但是
+	MOV DS, AX										;没有赋初值，通过MOV给DS,ES赋初值
 	MOV ES, AX
 	TESTT:
 		OUTPUT TS									;提示输入密码
-		OUTPUT WARP
+		OUTPUT WARP							
 		INPUT MA									;输入字符串
 		CALL ISEND									;判断输入的字符串是不是结束命令
 		CMP AX ,1
@@ -62,6 +66,7 @@ MAIN PROC FAR
 		CALL FINISH
 	RET
 MAIN ENDP
+
 ;Function Name	: FINISH
 ;Description	: 按任意键结束 
 FINISH PROC
@@ -78,8 +83,11 @@ FINISH ENDP
 ISEND PROC
 	LEA SI, MA+2									;输入字符的首地址
 	LEA DI, ED										;定义结束命令的首地址
-	MOV CX, 04H	
-	CLD
+	MOV CL, MA+1
+	XOR CH, CH
+	CMP CX, 04H										;判断长度是不是合法
+	JNZ ISNOT
+	CLD												;清方向标志位
 	REPE CMPSB										;字符串比较
 	JCXZ ISEXIT										;如果CX = 0 ,说明输入的是结束命令
 	ISNOT:
@@ -89,6 +97,7 @@ ISEND PROC
 		MOV AX ,1
 		RET
 ISEND ENDP
+
 ;Function Name	: ISTRUE
 ;Description	: 判断输入的字符和规定的密码是否相同
 ;Return			: 如果相同AX =1,并输出CORRECT,结束程序，否则AX = 0,输出ERROR,继续请求输入
@@ -96,8 +105,8 @@ ISTRUE PROC
 	LEA SI, MA+2									;输入字符的首地址
 	LEA DI, CODESET									;定义密码的首地址
 	MOV CX, 04H
-	CLD
-	REPE CMPSB
+	CLD												;清方向标志位
+	REPE CMPSB										;字符串比较
 	JCXZ YES										;如果CX = 0 ,说明输入的是密码
 	NO:
 		OUTPUT ISF
@@ -109,6 +118,7 @@ ISTRUE PROC
 		RET
 	RET
 ISTRUE ENDP
+
 ;Function Name	: CHECK
 ;Description	: 判断输入的字符长度和组成是不是合法
 ;Return			: 如果合法AX =1，否则AX = 0,输出The string is not legal!,继续请求输入
