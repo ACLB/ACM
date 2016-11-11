@@ -7,7 +7,7 @@
 #### Uva 10294 Polya
 #### CERC 2008 Tower 矩阵快速幂
 #### ZOJ 2113 矩阵
-#### ********Beijing 2007 Expensive Drink 单纯形法 or 平面切割 难
+#### Beijing 2007 Expensive Drink 单纯形法 or 平面切割 难
 #### World Final 2006 Ars Longa 高斯消元
 ### 组合
 #### Uva 10207 组合
