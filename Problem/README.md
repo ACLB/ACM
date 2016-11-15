@@ -23,4 +23,13 @@
 #### NEERC 2006 Fool's Game Dp
 
 ### 图论
+### 计算几何
+#### 多边形
+##### SGU 209 Areas 细节较多
+##### Pacific__Northwest__2008 Cave Crisis 二分+图论
+##### Ural 1058 Chocolate 数学
+##### Ningbo 2009 Ancient vending machine 几何
+##### Uva 10969 Sweet Dream 几何较难
+##### Japan 2009 Malfatti Circles 二分
+##### SGU 198 Get Out! 图论
 
