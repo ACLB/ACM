@@ -3,6 +3,23 @@
 
 #### HDU 5954
 #### ~~HDU 5964~~
+#### Codeforces 444B FFT
+#### Codeforces 623E FFT
+#### Codeforces 528D FFT
+#### Codeforces 663E FWT
+#### HDU 1402 FFT
+#### HDU 4609 FFT
+#### HDU 5307 FFT
+#### HDU 5730 FFT
+#### HDU 5751 FFT
+#### HDU 5763 FFT
+#### HDU 5829 FFT
+#### HDU 2262 4592 4936 3949 Gauss
+#### HDU 3364 2285 4326 Gauss
+#### HDU 3359 3571 5755 Gauss
+#### HDU 3915 3976 5833 Gauss
+#### HDU 4418 4870 5006 Gauss
+#### HDU 5755 Gauss
 ##Problem
 ### 概率
 #### ~~Uva 10288 Coupons简答概率~~
