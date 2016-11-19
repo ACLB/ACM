@@ -1,13 +1,12 @@
 [toc]
 ## 待补题目
-
 #### HDU 5954
 #### ~~HDU 5964~~
 #### Codeforces 444B FFT
 #### Codeforces 623E FFT
 #### Codeforces 528D FFT
 #### Codeforces 663E FWT
-#### HDU 1402 FFT
+#### ~~HDU 1402 FFT~~
 #### HDU 4609 FFT
 #### HDU 5307 FFT
 #### HDU 5730 FFT
