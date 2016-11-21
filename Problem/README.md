@@ -9,10 +9,20 @@
 #### ~~HDU 1402 FFT~~
 #### ~~HDU 4609 FFT~~
 #### ~~HDU 5307 FFT~~
-#### HDU 5730 FFT
+#### HDU 5730 CDQ+FFT
 #### HDU 5751 FFT
 #### HDU 5763 FFT
 #### HDU 5829 FFT
+#### Bzoj 1492 CDQ分治论文题
+#### Bzoj 3963 CDQ分治
+#### Bzoj 1176 CDQ分治
+#### Bzoj 2716/2648  CDQ分治 OR KD-Tree
+#### Bzoj 3053 KD-Tree
+#### Bzoj 2527 CDQ分治
+#### Bzoj 3110 CDQ分治
+#### Bzoj 2001 CDQ 分治
+#### HDU 4347 KD-tree
+#### HDU 2966 KD-tree
 #### HDU 2262 4592 4936 3949 Gauss
 #### HDU 3364 2285 4326 Gauss
 #### HDU 3359 3571 5755 Gauss
