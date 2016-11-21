@@ -2,7 +2,7 @@
 #define CLR(a,b) memset(a,b,sizeof(a))
 using namespace std;
 const double Pi = acos(-1.0);
-const int maxn = 1e5+100;
+const int maxn = 2e5+100;
 const int Mod = 313;
 struct Complex{
     double real, imag;
@@ -15,7 +15,7 @@ struct Complex{
         return Complex(real-a.real,imag - a.imag);
     }
     Complex operator * (const Complex &a) const {
-        return Coomplex(real*a.real-imag*a.imag,real*a.imag+imag*a.real);
+        return Complex(real*a.real-imag*a.imag,real*a.imag+imag*a.real);
     }
     void Setvalue(double r,double i) {
         real = r; imag = i;
@@ -23,7 +23,7 @@ struct Complex{
     void Output() {
         printf("%f %f\n",real,imag);
     }
-}a[maxn*2],b[maxn*2];
+}a[maxn*4],b[maxn*4];
 int dp[maxn],num[maxn];
 int n,len;
 void Rader(Complex y[]) {
@@ -48,7 +48,7 @@ void FFT(Complex y[],int op) {
                 Complex v = w*y[j+h/2];
                 y[j] = u+v;
                 y[j+h/2] = u-v;
-                w  =w*wn;
+                w =w*wn;
             }
         }
     }
@@ -57,29 +57,36 @@ void FFT(Complex y[],int op) {
     }
 }
 void CDQ(int L,int R) {
-    if(L == R) {
-        dp[L]+=num[L];
-        dp[L]%=Mod;
+    if(L == R){ 
         return ;
     }
     int mid = (L+R)>>1;
     CDQ(L,mid);
     len = 1;
-    while(len<=(r-1+1)) len<<=1;
-    CLR(a,0); CLR(b,0);
-    for(int i = 1;i <= mid; i++)  a[i-1].real+=dp[i];
-    for(int i = 0;i <r-l+1; i++)  b[i].real += num[i+1];
+    while(len<=(R-L+1)) len<<=1;
+    for(int i =0;i<len;i++)  a[i].Setvalue(0,0);
+    for(int i =0;i<len;i++)  b[i].Setvalue(0,0);
+    for(int i = L;i <= mid; i++)  a[i-L].real+=dp[i];
+    for(int i = 0;i <R-L+1; i++)  b[i].real += num[i];
     FFT(a,1);FFT(b,1);
     for(int i = 0;i<len;i++) a[i] = a[i]*b[i];
     FFT(a,-1);
-    for(int i = mid+1;i<=r;i++) {
-        dp[i]+=
+    for(int i = mid+1;i<=R;i++) {
+        dp[i]+=(int)(a[i-L].real+0.5);
+        dp[i]%=Mod;
     }
+    CDQ(mid+1,R);
 }
 int main() {
     while(~scanf("%d",&n) && n) {
-        CLR(dp,0);
-        for(int i = 1;i<=n;i++) scanf("%d",&num[i]);
+        CLR(dp,0);CLR(num,0);
+        for(int i = 1;i<=n;i++) {
+            scanf("%d",&num[i]);
+            num[i]%=Mod;
+        }
+        dp[0] = 1;
+        CDQ(0,n);
+        printf("%d\n",dp[n]);
     }
     return 0;
 }
