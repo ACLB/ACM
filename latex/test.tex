@@ -1,16 +1,50 @@
-\documentclass{beamer}
+\documentclass[serif]{beamer}
 \usepackage[english]{babel}
 \usepackage[noindent]{ctex}
 \usepackage{graphicx}
+\setbeamerfont{frametitle}{size=\small}
 \usetheme{Madrid}
 \title{FFT和NTT 简易讲解}
-\author{QAQ}
+\author{绝尘}
 \institute{山东理工大学}
+\titlegraphic{\includegraphics[height=0.8in,width=4.5in]{logo.png}}
 \date{\today}
 \begin{document}
+
+%%%% first page %%%%
+\frame{\titlepage}
+
+%%%% contents %%%%
+\tableofcontents
+\clearpage
+
+%%%% section 1 %%%%
+\section{基础知识}
+\subsection{多项式乘法}
 \begin{frame}
-    \titlepage
+    \frametitle{多项式表达式}
+    \begin{flushleft}
+    \onslide<1->\centering{点值表达}
+    \begin{description}
+	\onslide<2->\item 1.什么是点值表达?
+        \onslide<3->{\\ 比如一个多项式$$A(x) = \sum\limits_{i = 0}^{n-1}a_ix^i$$}
+	\onslide<4->{我们在这里顺便假设一个列向量
+	$$a = (a_0,a_1,a_2,\cdots,a_{n-1})$$}
+	\onslide<5->{我们将$A(x)$看作是一个函数，然后在数轴上找到这些点
+	$$x_1,x_2,x_3,\cdots,x_{n-1}$$}
+	\onslide<6->{然后将这些点分别代入 $A(x)$，然后就可以得到$n$个点}  
+        \onslide<7->{\item 2}
+        \onslide<8>{\item 3}
+    \end{description}
+    \end{flushleft}
 \end{frame}
-\begin{frame}{多项式乘法}
+
+%%%% section 2 %%%%
+\section{}
+\begin{frame}
+    \frametitle{}
+
 \end{frame}
 \end{document}
+%%%% end of file %%%%
+
